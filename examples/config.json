@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "exclude": {},
+  "rules": [
+    {
+      "id": "security",
+      "title": "Security reporting guide",
+      "paths": ["SECURITY.md", ".github/SECURITY.md"],
+      "contains_any": ["report", "contact"]
+    }
+  ]
+}
