@@ -10,7 +10,7 @@ import sys
 import unicodedata
 from pathlib import Path, PurePosixPath
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 MAX_FILE = 128 * 1024
 MAX_TOTAL = 4 * 1024 * 1024
 MAX_CONFIG = 64 * 1024

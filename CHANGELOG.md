@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0 — 2026-10-20
+
+- Installable wheel with `oss-readiness-auditor` entry point and `python -m oss_auditor` support.
+- Standard pyproject metadata, MIT license files and no runtime dependencies.
+- Pinned development build tools and ten isolated wheel installation checks.
+- Installed/source equivalence for reports, custom rules, exclusions and exit codes 0/1/2.
+- Consumer CI template and integration guide; six-platform/version matrix now builds and verifies the package.
+- Report/config version 1 and scanner behavior preserved; tool_version updates to 0.2.0.
+- No PyPI publication, external adoption or user feedback claimed.
+
 ## 0.1.0 — 2026-10-16
 
 - Seven built-in documentation signal rules and declarative custom checks.

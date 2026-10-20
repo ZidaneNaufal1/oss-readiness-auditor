@@ -19,3 +19,9 @@ jobs:
       - run: python examples/run_demo.py
       - name: Audit this checkout with a custom rule
         run: python oss_auditor.py . --config examples/config.json --format json
+      - name: Install pinned build tools
+        run: python -m pip install -r requirements-dev.txt
+      - name: Build wheel without downloading runtime dependencies
+        run: python -m pip wheel . --no-build-isolation --no-deps --wheel-dir dist
+      - name: Verify isolated installed command and module
+        run: python scripts/verify_install.py dist/oss_readiness_auditor-0.2.0-py3-none-any.whl

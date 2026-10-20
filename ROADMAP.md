@@ -6,7 +6,7 @@
 - Versioned config, safe relative patterns, literal tokens, explicit exclusions and structured reports.
 - Synthetic fixtures, tests, demo and CI; source-preserving external export.
 
-## Next milestone: packaging and integration
+## Delivered in 0.2.0: packaging and integration
 
 - Package the existing module without changing report/config behavior.
 - Verify installation and command entry point in clean virtual environments on Windows/Linux.
@@ -19,5 +19,7 @@
 - Add explanatory rule evidence without publishing raw document content.
 - Benchmark a documented synthetic dataset with explicit limits and methodology.
 - Review external rule contributions when they actually arrive.
+
+Next development session focuses on a reproducible synthetic benchmark and documented false-positive/negative cases. Voluntary external trials remain pending until actual feedback is available.
 
 Plans are not completed features or evidence of adoption. Version 1.0 requires review of compatibility, installation, documentation and actual usage feedback; no date is promised.

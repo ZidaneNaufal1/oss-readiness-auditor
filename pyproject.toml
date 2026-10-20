@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77,<81", "wheel>=0.45,<0.46"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oss-readiness-auditor"
+dynamic = ["version"]
+description = "Local repository documentation signals with declarative rules and structured reports"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Muhammad Zidane Naufal Azzam"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Repository = "https://github.com/ZidaneNaufal1/oss-readiness-auditor"
+Issues = "https://github.com/ZidaneNaufal1/oss-readiness-auditor/issues"
+
+[project.scripts]
+oss-readiness-auditor = "oss_auditor:main"
+
+[tool.setuptools]
+py-modules = ["oss_auditor"]
+
+[tool.setuptools.dynamic]
+version = {attr = "oss_auditor.VERSION"}

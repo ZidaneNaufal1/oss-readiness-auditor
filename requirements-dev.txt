@@ -1,0 +1,3 @@
+# Build tooling only; installed in an isolated development environment.
+setuptools==80.9.0
+wheel==0.45.1

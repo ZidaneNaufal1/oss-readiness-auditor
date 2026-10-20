@@ -18,6 +18,8 @@ Declarative JSON avoids running repository-provided plugins. Explicit config loa
 
 ## Current limits and next work
 
-Version 0.1.0 runs from a source checkout. Packaging and a consumer CI example are next. Actual user feedback and representative performance measurements are still pending. The maintainer's ability to explain and improve the implementation is a separate learning milestone.
+Version 0.2.0 adds a wheel, console entry point and consumer CI template. Ten integration checks install into a fresh virtual environment and run from outside the source checkout: import origin and distribution metadata prove the installed code is exercised, while source/installed report comparison covers JSON/Markdown, custom rules, exceptions and failure codes. Runtime dependencies remain empty, and the report/config version stays at 1. CI builds and repeats these checks on supported Windows/Linux Python versions.
+
+Actual user feedback and representative performance measurements are still pending. The maintainer's ability to explain and improve the implementation is a separate learning milestone.
 
 Owner/maintainer: Muhammad Zidane Naufal Azzam. Implementation, tests and documentation assisted by Ciel / OpenAI Codex, with limitations and provenance disclosed.

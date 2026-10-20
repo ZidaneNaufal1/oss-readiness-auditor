@@ -1,0 +1,27 @@
+# Template for a trusted repository. Copy to .github/workflows/oss-audit.yml.
+name: Documentation signals
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the reviewed auditor release
+        run: python -m pip install 'https://github.com/ZidaneNaufal1/oss-readiness-auditor/archive/refs/tags/v0.2.0.tar.gz'
+      - name: Inspect documentation with explicit policy
+        shell: bash
+        run: |
+          set +e
+          oss-readiness-auditor . --config .github/oss-audit.json --format json --output "$RUNNER_TEMP/oss-report-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.json"
+          audit_status=$?
+          set -e
+          exit "$audit_status"
+# Supply .github/oss-audit.json, for example {"version":1}.
+# Exit 1 means missing evidence; exit 2 means an operational/inspection error.
+# Both intentionally fail the job. Do not mask either with `|| true`.
+# Use ordinary pull_request, never pull_request_target for untrusted checkouts.
