@@ -1,0 +1,800 @@
+{
+  "benchmark_version": 1,
+  "dataset_version": 1,
+  "tool_version": "0.3.0",
+  "report_version": 1,
+  "dataset_sha256": "bc678e0fbd2c1079430cd2de28a17d0fd9d84a5df05b24e35aa9d82e90726b50",
+  "environment": {
+    "python": "3.14.0",
+    "implementation": "CPython",
+    "os": "Windows",
+    "os_release": "11",
+    "machine": "AMD64"
+  },
+  "method": {
+    "timer": "perf_counter_ns",
+    "clock_resolution_seconds": 1e-07,
+    "warmup_audits_per_case": 1,
+    "measured_audits_per_case": 7,
+    "scope": "audit(root, config) in one process; fresh Reader each audit; warm OS caches; includes directory listing, reads and checks",
+    "excluded": "fixture creation, manifest hashing, JSON/Markdown serialization, CLI startup, installation and cleanup",
+    "thresholds": "none; timings are observational, not universal performance or accuracy claims"
+  },
+  "cases": [
+    {
+      "id": "empty",
+      "fixture": {
+        "file_count": 0,
+        "directory_count": 0,
+        "total_bytes": 0,
+        "sha256": "526ad7e4d03e19938bb6b1aa2eefc207368d7cc8f7b26ed11e5a3c8a713e0247"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 0,
+        "missing": 7,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 0,
+        "missing": 7,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 1,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "license",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "run",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "test",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "ci",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "contributing",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "provenance",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        }
+      ],
+      "interpretation": "Seven absent documentation signals.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          1425700,
+          2087900,
+          895600,
+          779400,
+          1416300,
+          961900,
+          1325600
+        ],
+        "min": 779400,
+        "median": 1325600,
+        "max": 2087900
+      }
+    },
+    {
+      "id": "complete",
+      "fixture": {
+        "file_count": 5,
+        "directory_count": 2,
+        "total_bytes": 214,
+        "sha256": "01c35774ee3eade1a873727a47f903e87b4d994d3080192b8b5b7badadb1c3f8"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 0,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "Seven nonempty file/text signals; placeholder license/workflow validity is not tested.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          10693600,
+          6077800,
+          7663600,
+          7280500,
+          7823800,
+          8436200,
+          5973300
+        ],
+        "min": 5973300,
+        "median": 7663600,
+        "max": 10693600
+      }
+    },
+    {
+      "id": "misleading_tokens",
+      "fixture": {
+        "file_count": 5,
+        "directory_count": 2,
+        "total_bytes": 213,
+        "sha256": "19270a704d68a2677b915d4c43a3b03cd93b9d7918936f22708478afa118e06d"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 0,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "False-positive illustration: run/test pass despite explicit negation and no working instructions.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          10335700,
+          7277500,
+          9560100,
+          8904800,
+          7369400,
+          5891000,
+          10001300
+        ],
+        "min": 5891000,
+        "median": 8904800,
+        "max": 10335700
+      }
+    },
+    {
+      "id": "unrecognized_instructions",
+      "fixture": {
+        "file_count": 5,
+        "directory_count": 2,
+        "total_bytes": 214,
+        "sha256": "f66dab67cca62958346a5f38151025ed3681f258d532fe6fa47469788a5c28c9"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 5,
+        "missing": 2,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 5,
+        "missing": 2,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 1,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "test",
+          "status": "missing",
+          "reason": "no_matching_evidence"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "False-negative illustration: launch/tox guidance exists but does not match default literals.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          6301700,
+          9493800,
+          5828900,
+          9544600,
+          9183100,
+          8782900,
+          7479300
+        ],
+        "min": 5828900,
+        "median": 8782900,
+        "max": 9544600
+      }
+    },
+    {
+      "id": "custom_and_exclusion",
+      "fixture": {
+        "file_count": 6,
+        "directory_count": 2,
+        "total_bytes": 255,
+        "sha256": "38c64e118a4c8ceddc61997301980c5deb878a89f8bad22f71e06ce705050a18"
+      },
+      "config_sha256": "78db0f207ab2dbebbb859ee706365e0bb7e3f0d642ea71b242f881bdbc4eace8",
+      "expected_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 1,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 1,
+        "error": 0
+      },
+      "exit_code": 0,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "excluded",
+          "reason": "explicit_exclusion"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "security",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "Custom SECURITY rule passes; ci excluded visibly with reason.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          5823000,
+          6391800,
+          5987400,
+          4853400,
+          7880200,
+          4632100,
+          6951000
+        ],
+        "min": 4632100,
+        "median": 5987400,
+        "max": 7880200
+      }
+    },
+    {
+      "id": "file_at_128k",
+      "fixture": {
+        "file_count": 5,
+        "directory_count": 2,
+        "total_bytes": 131209,
+        "sha256": "ec7a700e9a454ea00cf68d84349d94d130817acf4562e59d403a6e5501078c4b"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 0,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "README exactly 131072 bytes is accepted.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          5466400,
+          11972700,
+          12313000,
+          10440900,
+          8896000,
+          6836500,
+          9056000
+        ],
+        "min": 5466400,
+        "median": 9056000,
+        "max": 12313000
+      }
+    },
+    {
+      "id": "file_over_128k",
+      "fixture": {
+        "file_count": 5,
+        "directory_count": 2,
+        "total_bytes": 131210,
+        "sha256": "2798a0a5e2e3e94298904b19b3b535a3f41f1b394146b8f6a6c65f4a27abdc49"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 4,
+        "missing": 0,
+        "excluded": 0,
+        "error": 3
+      },
+      "actual_counts": {
+        "pass": 4,
+        "missing": 0,
+        "excluded": 0,
+        "error": 3
+      },
+      "exit_code": 2,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "error",
+          "reason": "file_size_limit"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "error",
+          "reason": "file_size_limit"
+        },
+        {
+          "id": "test",
+          "status": "error",
+          "reason": "file_size_limit"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "README one byte over limit errors all three dependent checks.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          8073100,
+          9515500,
+          8606000,
+          12206600,
+          10842100,
+          11285900,
+          9565800
+        ],
+        "min": 8073100,
+        "median": 9565800,
+        "max": 12206600
+      }
+    },
+    {
+      "id": "directory_at_1000",
+      "fixture": {
+        "file_count": 1000,
+        "directory_count": 2,
+        "total_bytes": 23099,
+        "sha256": "c5d7215e7288d079765ff72ea72762549f50f7993231d720e050c24dec8f255e"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "actual_counts": {
+        "pass": 7,
+        "missing": 0,
+        "excluded": 0,
+        "error": 0
+      },
+      "exit_code": 0,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "Root has exactly 1000 entries, including .github directory.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          18542300,
+          14965600,
+          15629300,
+          16017700,
+          19364100,
+          20450300,
+          17573500
+        ],
+        "min": 14965600,
+        "median": 17573500,
+        "max": 20450300
+      }
+    },
+    {
+      "id": "directory_over_1000",
+      "fixture": {
+        "file_count": 1001,
+        "directory_count": 2,
+        "total_bytes": 23122,
+        "sha256": "4873a797601cc27072a6ed53cf83f2677f4f3015d1f71edbd1a0a0a060db9e59"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 0,
+        "missing": 0,
+        "excluded": 0,
+        "error": 7
+      },
+      "actual_counts": {
+        "pass": 0,
+        "missing": 0,
+        "excluded": 0,
+        "error": 7
+      },
+      "exit_code": 2,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "license",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "run",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "test",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "ci",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "contributing",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        },
+        {
+          "id": "provenance",
+          "status": "error",
+          "reason": "directory_entry_limit"
+        }
+      ],
+      "interpretation": "Root has 1001 entries; every default rule errors, including CI because its .gitlab-ci.yml alternative lists the root.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          19661600,
+          17007100,
+          19546800,
+          21989400,
+          30200800,
+          19307400,
+          17666100
+        ],
+        "min": 17007100,
+        "median": 19546800,
+        "max": 30200800
+      }
+    },
+    {
+      "id": "aggregate_read_budget",
+      "fixture": {
+        "file_count": 36,
+        "directory_count": 2,
+        "total_bytes": 4194470,
+        "sha256": "b3605ffc3a9a219e3c836298a319a2687175fac2fc5a3b6aec816a4e150656da"
+      },
+      "config_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "expected_counts": {
+        "pass": 6,
+        "missing": 0,
+        "excluded": 0,
+        "error": 1
+      },
+      "actual_counts": {
+        "pass": 6,
+        "missing": 0,
+        "excluded": 0,
+        "error": 1
+      },
+      "exit_code": 2,
+      "findings": [
+        {
+          "id": "readme",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "license",
+          "status": "error",
+          "reason": "read_budget_limit"
+        },
+        {
+          "id": "run",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "test",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "ci",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "contributing",
+          "status": "pass",
+          "reason": "evidence_found"
+        },
+        {
+          "id": "provenance",
+          "status": "pass",
+          "reason": "evidence_found"
+        }
+      ],
+      "interpretation": "32 matching license files of 128 KiB exceed total 4 MiB once README bytes are included.",
+      "source_preserved": true,
+      "deterministic_findings": true,
+      "timing_ns": {
+        "samples": [
+          37462100,
+          39614100,
+          33244000,
+          32895300,
+          30363000,
+          36851000,
+          37297700
+        ],
+        "min": 30363000,
+        "median": 36851000,
+        "max": 39614100
+      }
+    }
+  ]
+}

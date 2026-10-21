@@ -24,4 +24,6 @@ jobs:
       - name: Build wheel without downloading runtime dependencies
         run: python -m pip wheel . --no-build-isolation --no-deps --wheel-dir dist
       - name: Verify isolated installed command and module
-        run: python scripts/verify_install.py dist/oss_readiness_auditor-0.2.0-py3-none-any.whl
+        run: python scripts/verify_install.py dist/oss_readiness_auditor-0.3.0-py3-none-any.whl
+      - name: Verify synthetic corpus and record observational timings
+        run: python benchmarks/run_benchmark.py --repetitions 3

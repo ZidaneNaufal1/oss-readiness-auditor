@@ -20,6 +20,12 @@
 - Benchmark a documented synthetic dataset with explicit limits and methodology.
 - Review external rule contributions when they actually arrive.
 
-Next development session focuses on a reproducible synthetic benchmark and documented false-positive/negative cases. Voluntary external trials remain pending until actual feedback is available.
+## Delivered in 0.3.0: synthetic measurement and limitations
+
+- Ten fixed fixture cases, expected findings, source preservation and repeatability checks.
+- Warm in-process timings with raw samples, environment/method metadata and SHA256 fixture identity.
+- Documented false-positive/negative examples and a local recorded sample; no universal performance or accuracy claim.
+
+Next development session focuses on an internal trial across maintainer-owned repositories and a practical pilot guide. Voluntary external trials remain pending until actual feedback is available.
 
 Plans are not completed features or evidence of adoption. Version 1.0 requires review of compatibility, installation, documentation and actual usage feedback; no date is promised.

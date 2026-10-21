@@ -20,6 +20,10 @@ Declarative JSON avoids running repository-provided plugins. Explicit config loa
 
 Version 0.2.0 adds a wheel, console entry point and consumer CI template. Ten integration checks install into a fresh virtual environment and run from outside the source checkout: import origin and distribution metadata prove the installed code is exercised, while source/installed report comparison covers JSON/Markdown, custom rules, exceptions and failure codes. Runtime dependencies remain empty, and the report/config version stays at 1. CI builds and repeats these checks on supported Windows/Linux Python versions.
 
-Actual user feedback and representative performance measurements are still pending. The maintainer's ability to explain and improve the implementation is a separate learning milestone.
+Version 0.3.0 adds [a documented ten-case synthetic benchmark](../benchmarks/README.md). A measured seven-repetition sample on a constrained Windows/CPython 3.14 host recorded a 7.664 ms median for the five-file complete case; timing includes only warm in-process audit calls, not setup or CLI startup. This is an observed sample, not a cross-machine guarantee or proof of improvement.
+
+The study intentionally exposes two semantic errors: negated installation/unittest text still passes literal checks, while launch/tox guidance is missed. At 1001 root entries, every default rule errors, including CI because its GitLab alternative also lists root. Expected outcomes, deterministic reports, unchanged sources and boundary reasons are checked on each benchmark run. The first draft incorrectly expected CI to pass that over-limit case; the failing test prompted inspection of all candidate paths and correction of the documented expectation, not a change to scanner behavior.
+
+Actual external feedback and representative real-world performance measurements are still pending. Next is an internal trial across maintainer-owned projects. The maintainer's ability to explain and improve the implementation is a separate learning milestone.
 
 Owner/maintainer: Muhammad Zidane Naufal Azzam. Implementation, tests and documentation assisted by Ciel / OpenAI Codex, with limitations and provenance disclosed.

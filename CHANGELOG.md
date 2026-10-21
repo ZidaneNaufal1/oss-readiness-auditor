@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-10-21
+
+- Reproducible ten-case synthetic corpus and warm in-process audit timing runner.
+- Expected findings, SHA256 fixture identities, raw timing samples and environment/method metadata.
+- Repetition determinism and source-preservation gates; tests for incorrect expectations and mutation.
+- Explicit false-positive/negative illustrations and exact file/directory/read-budget boundaries.
+- Recorded Windows/CPython 3.14 sample with seven repetitions and stated limitations; CI repeats three times without timing thresholds.
+- Scanner behavior and report/config version 1 preserved; tool_version updates to 0.3.0.
+
 ## 0.2.0 — 2026-10-20
 
 - Installable wheel with `oss-readiness-auditor` entry point and `python -m oss_auditor` support.

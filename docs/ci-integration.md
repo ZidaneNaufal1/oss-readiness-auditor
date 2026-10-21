@@ -8,7 +8,7 @@ Copy [examples/consumer-ci.yml.txt](../examples/consumer-ci.yml.txt) into a trus
 
 That activates the seven defaults. Review custom paths and exclusion reasons before extending the config. Configuration is explicitly selected, not automatically discovered. Use synthetic or non-sensitive policy text because rule titles and exclusion reasons appear in reports.
 
-The example installs the v0.2.0 GitHub source archive, then executes the installed command. It needs network access for installation/build tooling, but the audit itself makes no network calls. Runtime dependencies are empty. For immutable source selection, replace the tag URL with an archive URL for a reviewed full commit. This repository has no PyPI release.
+The example installs the v0.3.0 GitHub source archive, then executes the installed command. It needs network access for installation/build tooling, but the audit itself makes no network calls. Runtime dependencies are empty. For immutable source selection, replace the tag URL with an archive URL for a reviewed full commit. This repository has no PyPI release.
 
 The Bash step captures the command's exit status and returns it unchanged: 0 means no missing/error findings among active rules, 1 means missing evidence, 2 means an inspection/configuration/export/argument error. Both 1 and 2 fail the job. All-excluded configs can return 0 with pass=0, so review excluded counts rather than treating green CI as proof of project quality. Do not add `|| true` or ignore every nonzero status.
 
